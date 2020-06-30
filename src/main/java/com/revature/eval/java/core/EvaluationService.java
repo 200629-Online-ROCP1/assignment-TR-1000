@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class EvaluationService {
+	
 
 	/**
 	 * 1.A Speed Converter - Convert to MilesPerHour
@@ -22,7 +23,7 @@ public class EvaluationService {
 
 		public static long toMilesPerHour(double kilometersPerHour) {
 			// TODO Write an implementation for this method declaration
-			return 0;
+			return (long) (kilometersPerHour * 0.621371);
 		}
 
 		/**
@@ -42,7 +43,12 @@ public class EvaluationService {
 		 */
 		public static String printConversion(double kilometersPerHour) {
 			// TODO Write an implementation for this method declaration
-			return null;
+			return kilometersPerHour + " km/h = YY mi/h " + toMilesPerHour(kilometersPerHour);
+		}
+		
+		public static void main(String[] args) {
+			System.out.println(toMilesPerHour(24));
+			System.out.println(printConversion(24));
 		}
 	}
 
