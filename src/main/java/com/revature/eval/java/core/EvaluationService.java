@@ -112,7 +112,7 @@ public class EvaluationService {
 		}
 		
 		else if (isBarking == false) {
-			//System.out.println("peace and quiet :)");
+			//System.out.println("peace and quiet");
 			return false;
 		}
 		
