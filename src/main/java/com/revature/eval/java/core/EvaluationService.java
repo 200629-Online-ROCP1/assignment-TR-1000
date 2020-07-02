@@ -23,12 +23,14 @@ public class EvaluationService {
 
 		public static long toMilesPerHour(double kilometersPerHour) {
 			
+			
+			// if an invalid value is passed to this method
 			if (kilometersPerHour < 0) {
 				return -1;
 			}
-	
+			
+			//round value up
 			double value = (kilometersPerHour * 0.621371);
-
 			return (long)Math.round(value);
 		}
 
