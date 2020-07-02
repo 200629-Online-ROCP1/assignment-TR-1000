@@ -22,8 +22,14 @@ public class EvaluationService {
 	static class SpeedConverter {
 
 		public static long toMilesPerHour(double kilometersPerHour) {
-			// TODO Write an implementation for this method declaration
-			return (long) (kilometersPerHour * 0.621371);
+			
+			if (kilometersPerHour < 0) {
+				return -1;
+			}
+	
+			double value = (kilometersPerHour * 0.621371);
+
+			return (long)Math.round(value);
 		}
 
 		/**
@@ -42,14 +48,12 @@ public class EvaluationService {
 		 * Value"
 		 */
 		public static String printConversion(double kilometersPerHour) {
-			// TODO Write an implementation for this method declaration
+			
 			return kilometersPerHour + " km/h = YY mi/h " + toMilesPerHour(kilometersPerHour);
 		}
 		
-		public static void main(String[] args) {
-			System.out.println(toMilesPerHour(24));
-			System.out.println(printConversion(24 ));
-		}
+		
+
 	}
 
 	/**
@@ -72,6 +76,8 @@ public class EvaluationService {
 	 * If the parameter kiloBytes is less than 0 then print the text "Invalid
 	 * Value".
 	 */
+	
+	
 	public String printMegaBytesAndKiloBytes(int XX) {
 		// TODO Write an implementation for this method declaration
 		return null;
@@ -96,10 +102,24 @@ public class EvaluationService {
 	 * 
 	 * If the hourOfDay parameter is less than 0 or greater than 23, return false.
 	 */
-	public boolean shouldWakeUp(boolean isBarking, int hourOfDay) {
-		// TODO Write an implementation for this method declaration
+	public static boolean shouldWakeUp(boolean isBarking, int hourOfDay) {
+		
+		if (isBarking == true && hourOfDay < 8 || hourOfDay > 23) {
+			//System.out.println("Damn dog woke me up!");
+			return true;
+		}
+		
+		else if (isBarking == false) {
+			//System.out.println("peace and quiet :)");
+			return false;
+		}
+		
+		//System.out.println("not night, but shut up anyway!");
 		return false;
+		
 	}
+	
+	
 
 	/**
 	 * 4. DecimalComparator
@@ -485,4 +505,6 @@ public class EvaluationService {
 	public int guessingGame(int x, int y) {
 		return 0;
 	}
+	
+	
 }
